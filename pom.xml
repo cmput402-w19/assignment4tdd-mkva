@@ -36,6 +36,21 @@
   <build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 			<plugins>
+			
+				<plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+	                <configuration>
+	                    <archive>
+	                        <manifest>
+	                            <mainClass>markos.messageBoard.Application</mainClass>
+	                        </manifest>
+	                    </archive>
+	                    <descriptorRefs>
+	                        <descriptorRef>jar-with-dependencies</descriptorRef>
+	                    </descriptorRefs>
+	                </configuration>
+           	 	</plugin>
+            
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compile-plugin</artifactId>
