@@ -48,4 +48,11 @@ public class UserTest {
 		assertTrue(user.validEmail("MyEmailfoo@email.com"));
 	}
 
+	@Test
+	public void testValidEmailWrong() throws Exception {
+		thrown.expect(Exception.class);
+		thrown.expectMessage("Invalid email!");
+		User user = new User("username123", "My Namefoo", "MyEmailfoo@192.192.169");
+	}	
+
 }
