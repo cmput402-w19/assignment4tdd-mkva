@@ -13,7 +13,7 @@ public class Message {
 		this.type = type;
 		this.author = author;
 		this.date = date;
-		
+
 		try {
 			if(validContent(content))
 				this.content = content;
@@ -23,7 +23,7 @@ public class Message {
 			throw e;
 		}
 	}
-	
+
 	public Message(int type, int id, int parent, String content, String author, String date) {
 
 	}
@@ -58,6 +58,12 @@ public class Message {
 	}
 
 	public boolean validContent(String content) throws Exception {
+		Exception emptyContent = new Exception("Invalid post! Posts must have a content.");
+
+		// check if content is empty
+		if(content.isEmpty())
+			throw emptyContent;
+
 		return true;
 	}
 }
