@@ -2,8 +2,9 @@ package markos.messageBoard;
 
 public class UserManagement {
 
-	public User userLogin() {
-		return null;
+	public User userLogin() throws Exception {
+		User user = new User("usernamefoo", "nameX", "usernamefoo@email.com");
+		return user;
 		
 	}
 	
