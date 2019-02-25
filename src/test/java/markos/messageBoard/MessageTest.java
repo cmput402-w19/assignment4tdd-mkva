@@ -30,4 +30,10 @@ public class MessageTest {
 		thrown.expectMessage("Invalid post! Posts must not be composed only of white spaces.");
 		Message post = new Message(1, "    ", "markosva", "2019-02-21");
 	}
+	
+	@Test
+	public void testGetId() throws Exception {
+		Message message = new Message(1, "This is a post content", "markosva", "2019-02-21");
+		assert(1 == message.getId());
+	}
 }
