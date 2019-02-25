@@ -50,7 +50,7 @@ public class Message {
 	}
 
 	public String getAuthor() {
-		return null;
+		return this.author;
 	}
 
 	public String getContent() {
