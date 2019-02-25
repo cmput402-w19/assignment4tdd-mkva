@@ -30,6 +30,9 @@ public class User {
 		Exception emptyUsername = new Exception("\nInvalid username! Usernames cannot be empty.");
 		Exception specialCharactersyUsername = new Exception("Invalid username! Usernames cannot"
 				+ " have special characters.");
+		Exception whiteSpaceUsername = new Exception("\nInvalid username! Usernames cannot have"
+				+ " white space.");
+
 		// check if username is empty
 		if(username.isEmpty())
 			throw emptyUsername;
@@ -40,6 +43,10 @@ public class User {
 		boolean containSpecialCharacter = macth.find();
 		if(containSpecialCharacter)
 			throw specialCharactersyUsername;
+
+		// check if username contains white spaces
+		if(username.contains(" "))
+			throw whiteSpaceUsername;
 
 		return true;
 	}
