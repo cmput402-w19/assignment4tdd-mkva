@@ -46,7 +46,7 @@ public class Message {
 	}
 
 	public int getType() {
-		return (Integer) null;
+		return this.type;
 	}
 
 	public String getAuthor() {
