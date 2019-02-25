@@ -42,7 +42,7 @@ public class Message {
 
 
 	public int getParent() {
-		return (Integer) null;
+		return this.parent;
 	}
 
 	public int getType() {
