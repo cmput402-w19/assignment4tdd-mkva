@@ -29,6 +29,10 @@ public class User {
 
 	// Alternative constructor to instantiate User with information retrieved from db
 	public User(String username, String name, int stars) {
+		this.username = username;
+		this.name = name;
+		this.email = email;
+		this.stars = stars;
 
 	}
 
