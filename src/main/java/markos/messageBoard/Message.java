@@ -31,7 +31,7 @@ public class Message {
 	}
 
 	public int getId() {
-		return (Integer) null;
+		return this.id;
 	}
 
 

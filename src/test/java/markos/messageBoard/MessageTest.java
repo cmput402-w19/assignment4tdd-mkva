@@ -33,7 +33,7 @@ public class MessageTest {
 	
 	@Test
 	public void testGetId() throws Exception {
-		Message message = new Message(1, "This is a post content", "markosva", "2019-02-21");
-		assert(1 == message.getId());
+		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
+		assert(12 == message.getId());
 	}
 }
