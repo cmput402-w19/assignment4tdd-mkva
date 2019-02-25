@@ -61,12 +61,19 @@ public class UserTest {
 		User user = new User("username123", "My Name123", "MyEmail123@email.com");
 		assert("username123".equals(user.getUsername()));
 	}
-	
+
 	//TEST CASES FOR GET NAME 
-		@Test
-		public void testGetName() throws Exception {
-			User user = new User("username123", "My Name123", "MyEmail123@email.com");
-			assert("My Name123".equals(user.getName()));
-		}
+	@Test
+	public void testGetName() throws Exception {
+		User user = new User("username123", "My Name123", "MyEmail123@email.com");
+		assert("My Name123".equals(user.getName()));
+	}
+
+	// TEST CASES FOR GET EMAIL
+	@Test
+	public void testGetEmail() throws Exception {
+		User user = new User("username123", "My Name123", "MyEmail123@email.com");
+		assert("MyEmail123@email.com".equals(user.getEmail()));
+	}
 
 }
