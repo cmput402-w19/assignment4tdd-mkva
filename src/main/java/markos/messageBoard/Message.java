@@ -10,7 +10,7 @@ public class Message {
 	private String date;
 
 	public Message(int type, String content, String author, String date) throws Exception {
-		
+		validContent(content);
 	}
 	
 	public Message(int type, int id, int parent, String content, String author, String date) {
@@ -47,7 +47,7 @@ public class Message {
 	}
 
 	public boolean validContent(String content) throws Exception {
-		return (Boolean) null;
+		return true;
 	}
 }
 
