@@ -41,4 +41,11 @@ public class UserTest {
 		User user = new User("username foo", "My Namefoo", "MyEmailfoo@email.com");
 	}
 
+	//TEST CASES FOR EMAIL VALIDITY
+	@Test
+	public void testValidEmail() throws Exception {
+		User user = new User("username123", "My Namefoo", "MyEmailfoo@email.com");
+		assertTrue(user.validEmail("MyEmailfoo@email.com"));
+	}
+
 }

@@ -50,6 +50,11 @@ public class User {
 
 		return true;
 	}
+	
+	public boolean validEmail(String email) throws Exception {
+		return (Boolean) null;
+	}
+	
 
 	public String getUsername() {
 		return null;
