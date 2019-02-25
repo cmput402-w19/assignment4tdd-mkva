@@ -23,6 +23,8 @@ public class User {
 			System.out.println(e.getMessage());
 			throw e;
 		}
+		this.name = name;
+		this.stars = 0;
 	}
 
 	// Alternative constructor to instantiate User with information retrieved from db
