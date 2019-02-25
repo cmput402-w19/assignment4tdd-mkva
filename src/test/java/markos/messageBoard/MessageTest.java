@@ -30,37 +30,37 @@ public class MessageTest {
 		thrown.expectMessage("Invalid post! Posts must not be composed only of white spaces.");
 		Message post = new Message(1, "    ", "markosva", "2019-02-21");
 	}
-	
+
 	@Test
 	public void testGetId() throws Exception {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert(12 == message.getId());
 	}
-	
+
 	@Test
 	public void testGetType() throws Exception {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert(1 == message.getType());
 	}
-	
+
 	@Test
 	public void testGetParent() throws Exception {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert(11 == message.getParent());
 	}
-	
+
 	@Test
 	public void testGetContent() throws Exception {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert("This is a post content".equals(message.getContent()));
 	}
-	
+
 	@Test
 	public void testGetAuthor() throws Exception {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert("markosva".equals(message.getAuthor()));
 	}
-	
+
 	@Test
 	public void testGetDate() throws Exception {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
