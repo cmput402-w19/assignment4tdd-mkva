@@ -23,4 +23,11 @@ public class MessageTest {
 		thrown.expectMessage("Invalid post! Posts must have a content.");
 		Message post = new Message(1, "", "markosva", "2019-02-21");
 	}
+
+	@Test
+	public void testValidContentWhiteSpaces() throws Exception {
+		thrown.expect(Exception.class);
+		thrown.expectMessage("Invalid post! Posts must not be composed only of white spaces.");
+		Message post = new Message(1, "    ", "markosva", "2019-02-21");
+	}
 }
