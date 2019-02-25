@@ -27,6 +27,12 @@ public class Message {
 	}
 
 	public Message(int type, int id, int parent, String content, String author, String date) {
+		this.type = type;
+		this.id = id;
+		this.parent = parent;
+		this.content = content;
+		this.author = author;
+		this.date = date;
 
 	}
 
