@@ -62,7 +62,7 @@ public class Message {
 	}
 
 	public String getDate() {
-		return null;
+		return this.date;
 	}
 
 	public boolean validContent(String content) throws Exception {
