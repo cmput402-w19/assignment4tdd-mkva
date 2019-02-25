@@ -60,4 +60,10 @@ public class MessageTest {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert("markosva".equals(message.getAuthor()));
 	}
+	
+	@Test
+	public void testGetDate() throws Exception {
+		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
+		assert("2019-02-21".equals(message.getDate()));
+	}
 }
