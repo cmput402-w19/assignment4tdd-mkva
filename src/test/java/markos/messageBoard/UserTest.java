@@ -25,4 +25,12 @@ public class UserTest {
 		User user = new User("", "My Namefoo", "MyEmailfoo@email.com");
 	}
 
+	// boundary test - size = > 0 and content = special characters
+	@Test
+	public void testValidUsernameSpecialCharacters() throws Exception {
+		thrown.expect(Exception.class);
+		thrown.expectMessage("Invalid username! Usernames cannot have special characters.");
+		User user = new User("username!#", "My Namefoo", "MyEmailfoo@email.com");
+	}
+
 }
