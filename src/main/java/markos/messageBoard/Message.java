@@ -54,7 +54,7 @@ public class Message {
 	}
 
 	public String getContent() {
-		return null;
+		return this.content;
 	}
 
 	public String getAtuhor() {
