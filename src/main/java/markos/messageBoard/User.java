@@ -8,7 +8,14 @@ public class User {
 	private int stars;
 	
 	public User(String username, String name, String email) throws Exception {
-
+		try {
+			if(validUsername(username))
+				this.username = username;
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
+		}
 	}
 	
 	// Alternative constructor to instantiate User with information retrieved from db
@@ -17,7 +24,7 @@ public class User {
 	}
 	
 	public boolean validUsername(String username) {
-		return (Boolean) null;
+		return true;
 	}
 
 	public String getUsername() {
