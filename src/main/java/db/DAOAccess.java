@@ -19,7 +19,7 @@ public class DAOAccess {
 	public void initialize() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		// Setup the connection with the DB
-		connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "");
+		connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "markosalberta");
 	}
 
 	public Connection getAllMessages() throws Exception {
