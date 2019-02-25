@@ -53,6 +53,13 @@ public class UserTest {
 		thrown.expect(Exception.class);
 		thrown.expectMessage("Invalid email!");
 		User user = new User("username123", "My Namefoo", "MyEmailfoo@192.192.169");
-	}	
+	}
+
+	//TEST CASES FOR GET USERNAME 
+	@Test
+	public void testGetUsername() throws Exception {
+		User user = new User("username123", "My Name123", "MyEmail123@email.com");
+		assert("username123".equals(user.getUsername()));
+	}
 
 }
