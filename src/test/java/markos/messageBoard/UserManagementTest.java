@@ -14,6 +14,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +46,21 @@ public class UserManagementTest {
 
 		assert(1 == userManag.getFilter());
 		verify(userMock, times(1)).listUsers();
+	}
+	
+	@Test
+	public void testUserRegister() throws Exception {
+		String username = "usernameFoo";
+		String name = "nameFoo";
+		String email = "username@email.com";
+		String password = "pass";
+		
+		UserManagement mockUserManag = mock(UserManagement.class);
+		User u1 = new User(username, name, email);
+		when(mockUserManag.userRegister()).thenReturn(u1);
+
+		assertEquals(mockUserManag.userRegister().getClass(), markos.messageBoard.User.class);
+		verify(mockUserManag, times(1)).userRegister();
 	}
 
 }

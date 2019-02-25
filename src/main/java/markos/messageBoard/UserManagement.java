@@ -3,10 +3,12 @@ package markos.messageBoard;
 import java.util.List;
 import java.util.Scanner;
 
+import db.DAOAccess;
 import services.UserInfo;
 
 public class UserManagement {
 
+	DAOAccess db = new DAOAccess();
 	private int filter;
 
 	public User userLogin() throws Exception {
@@ -15,9 +17,21 @@ public class UserManagement {
 
 	}
 
-	public User userRegister() {
-		return null;
-
+	public User userRegister() throws Exception {
+		Scanner userInfo = new Scanner(System.in);
+    	String nameInput, emailInput, usernameInput, passwordInput;
+    	
+		System.out.println("\n Please provide your information below:\n");
+		System.out.println("\nName: ");
+		nameInput = userInfo.nextLine();
+		System.out.println("\nEmail: ");
+		emailInput = userInfo.nextLine();
+		System.out.println("\nUsername: ");
+		usernameInput = userInfo.nextLine();
+		System.out.println("\nPassword: ");
+		passwordInput = userInfo.nextLine();
+		User user = new User(usernameInput, nameInput, emailInput);
+		return db.registerUser(nameInput, emailInput, usernameInput,passwordInput);
 	}
 
 	public void filterUsersAndDisplay(UserInfo userInfo) throws Exception {
