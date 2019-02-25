@@ -80,6 +80,6 @@ public class User {
 	}
 
 	public int getStars() {
-		return (Integer) null;
+		return this.stars;
 	}
 }
