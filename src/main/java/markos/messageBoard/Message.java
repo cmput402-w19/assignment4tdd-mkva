@@ -1,5 +1,7 @@
 package markos.messageBoard;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Message {
 
 	private int type; //1=question and 2=answer
@@ -59,10 +61,15 @@ public class Message {
 
 	public boolean validContent(String content) throws Exception {
 		Exception emptyContent = new Exception("Invalid post! Posts must have a content.");
+		Exception onlyWhiteSpaceContent = new Exception("Invalid post! Posts must not be composed only"
+				+ " of white spaces.");
 
 		// check if content is empty
 		if(content.isEmpty())
 			throw emptyContent;
+
+		if(StringUtils.isBlank(content))
+			throw onlyWhiteSpaceContent;
 
 		return true;
 	}
