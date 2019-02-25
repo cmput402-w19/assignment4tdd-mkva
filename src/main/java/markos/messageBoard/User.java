@@ -68,7 +68,7 @@ public class User {
 
 
 	public String getUsername() {
-		return null;
+		return this.username;
 	}
 
 	public String getName() {
