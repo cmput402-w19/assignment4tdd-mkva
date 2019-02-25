@@ -13,16 +13,16 @@ public class UserTest {
 		User user = new User("usernamefoo", "My Namefoo", "MyEmailfoo@email.com");
 		assertTrue(user.validUsername("usernamefoo"));
 	}
-	
+
 	// boundary test - size = 0 (error)
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	
+
 	@Test
 	public void testValidUsernameSizeZero() throws Exception {
 		thrown.expect(Exception.class);
-	    thrown.expectMessage("Invalid username! Usernames cannot be empty.");
-	    User user = new User("", "My Namefoo", "MyEmailfoo@email.com");
+		thrown.expectMessage("Invalid username! Usernames cannot be empty.");
+		User user = new User("", "My Namefoo", "MyEmailfoo@email.com");
 	}
 
 }
