@@ -1,10 +1,10 @@
 package db;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-import com.mysql.cj.xdevapi.Statement;
+import java.sql.Statement;
 
 import markos.messageBoard.User;
 
@@ -19,8 +19,22 @@ public class DAOAccess {
 
 	}
 
-	public void getAllMessages() {
+	public Connection getAllMessages() throws Exception {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+	        // Setup the connection with the DB
+	        connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "markosalberta");
+            // Statements allow to issue SQL queries to the database
+            statement = connect.createStatement();
+            // Result set get the result of the SQL query
+            resultSet = statement
+                    .executeQuery("select * from messageBoard.post");
+            writeMessages(resultSet);
 
+        } catch (Exception e) {
+            throw e;
+        } 
+		return connect;
 	}
 
 	private void writeMessages(ResultSet resultSet) {

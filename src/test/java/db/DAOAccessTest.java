@@ -20,12 +20,17 @@ public class DAOAccessTest {
 	private ResultSet resultSet = null;
 	
 	@Test
-	public void testGetAllMessagesWorking() {
-		DAOAccess db = new DAOAccess();
-		db.getAllMessages();
-		
-		//check if connect is filled
-		assertTrue(connect!=null);
+	public void testGetAllMessagesWorking() throws Exception {
+		try {
+			DAOAccess db = new DAOAccess();
+			connect = db.getAllMessages();	
+			//check if connect is filled
+			assertTrue(connect!=null);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
