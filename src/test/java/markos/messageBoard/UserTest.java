@@ -76,4 +76,11 @@ public class UserTest {
 		assert("MyEmail123@email.com".equals(user.getEmail()));
 	}
 
+	// TEST CASES FOR GET STARS
+	@Test
+	public void testGetStars() throws Exception {
+		User user = new User("username123", "My Name123", "MyEmail123@email.com");
+		assert(0 == user.getStars());
+	}
+
 }
