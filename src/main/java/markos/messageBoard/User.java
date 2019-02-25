@@ -52,7 +52,7 @@ public class User {
 	}
 	
 	public boolean validEmail(String email) throws Exception {
-		return (Boolean) null;
+		return true;
 	}
 	
 
