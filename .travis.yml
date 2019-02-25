@@ -1,5 +1,8 @@
 language: java
 
+services:
+  - mysql
+
 script:
 - mvn cobertura:cobertura
 - mvn test
