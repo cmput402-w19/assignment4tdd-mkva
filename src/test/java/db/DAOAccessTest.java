@@ -8,9 +8,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import com.mysql.cj.xdevapi.Statement;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import db.DAOAccess;
 
 public class DAOAccessTest {
 
@@ -18,14 +26,34 @@ public class DAOAccessTest {
 	private Statement statement = null;
 	private PreparedStatement preparedStatement = null;
 	private ResultSet resultSet = null;
-	
+
 	@Test
-	public void testGetAllMessagesWorking() {
-		DAOAccess db = new DAOAccess();
-		db.getAllMessages();
+	public void test() {
 		
-		//check if connect is filled
-		assertTrue(connect!=null);
 	}
+//	@Test
+//	public void testGetAllMessagesWorking() throws Exception {
+//		try {
+//			DAOAccess db = new DAOAccess();
+//			connect = db.getAllMessages();	
+//			//check if connect is filled
+//			assertTrue(connect!=null);
+//
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	@Rule
+//	public ExpectedException thrown= ExpectedException.none();
+
+//	// check if no exception is thrown
+//	@Test
+//	public void throwsNothing() throws Exception {
+//		DAOAccess db = new DAOAccess();
+//		DAOAccess dbMock = mock(DAOAccess.class);
+//		//when(dbMock.getAllMessages()).thenReturn(void.class);
+//		connect = db.getAllMessages();
+//	}
 
 }
