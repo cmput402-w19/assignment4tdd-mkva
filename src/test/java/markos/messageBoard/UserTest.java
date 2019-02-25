@@ -83,4 +83,11 @@ public class UserTest {
 		assert(0 == user.getStars());
 	}
 
+	// TEST CASES FOR GET STARS USING ALTERNATIVE CONSTRUCTOR
+	@Test
+	public void testGetStarsInitial() throws Exception {
+		User user = new User("username123", "My Name123", 2);
+		assert(2 == user.getStars());
+	}
+
 }
