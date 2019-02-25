@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="markos.messageBoard.UserTest" time="0" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="markos.messageBoard.UserTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_201\jre\bin"/>
@@ -63,7 +63,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameSizeZero" time="0"/>
   <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameSpecialCharacters" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetStars" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testValidEmail" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetUsername" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetEmail" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetName" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameSizeZero" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testValidEmailWrong" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameWhiteSpace" time="0"/>
   <testcase classname="markos.messageBoard.UserTest" name="testValidUsername" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetStarsInitial" time="0"/>
 </testsuite>
