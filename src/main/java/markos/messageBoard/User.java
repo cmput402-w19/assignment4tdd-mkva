@@ -35,9 +35,9 @@ public class User {
 			throw emptyUsername;
 
 		// check if username contains special characters
-		Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
-		Matcher m = p.matcher(username);
-		boolean containSpecialCharacter = m.find();
+		Pattern noSpecialCharacters = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+		Matcher macth = noSpecialCharacters.matcher(username);
+		boolean containSpecialCharacter = macth.find();
 		if(containSpecialCharacter)
 			throw specialCharactersyUsername;
 
