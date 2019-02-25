@@ -42,4 +42,10 @@ public class MessageTest {
 		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
 		assert(1 == message.getType());
 	}
+	
+	@Test
+	public void testGetParent() throws Exception {
+		Message message = new Message(1, 12, 11, "This is a post content", "markosva", "2019-02-21");
+		assert(11 == message.getParent());
+	}
 }
