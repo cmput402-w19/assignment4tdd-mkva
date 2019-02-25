@@ -33,4 +33,12 @@ public class UserTest {
 		User user = new User("username!#", "My Namefoo", "MyEmailfoo@email.com");
 	}
 
+	// boundary test - size = > 0 and content = white space
+	@Test
+	public void testValidUsernameWhiteSpace() throws Exception {
+		thrown.expect(Exception.class);
+		thrown.expectMessage("Invalid username! Usernames cannot have white space.");
+		User user = new User("username foo", "My Namefoo", "MyEmailfoo@email.com");
+	}
+
 }
