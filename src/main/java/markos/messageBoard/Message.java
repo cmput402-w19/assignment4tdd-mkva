@@ -10,7 +10,18 @@ public class Message {
 	private String date;
 
 	public Message(int type, String content, String author, String date) throws Exception {
-		validContent(content);
+		this.type = type;
+		this.author = author;
+		this.date = date;
+		
+		try {
+			if(validContent(content))
+				this.content = content;
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
+		}
 	}
 	
 	public Message(int type, int id, int parent, String content, String author, String date) {
