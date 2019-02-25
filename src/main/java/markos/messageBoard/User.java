@@ -3,6 +3,8 @@ package markos.messageBoard;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.validator.EmailValidator;
+
 public class User {
 
 	private String username;
@@ -14,6 +16,8 @@ public class User {
 		try {
 			if(validUsername(username))
 				this.username = username;
+			if(validEmail(email))
+				this.email = email;
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
@@ -50,11 +54,16 @@ public class User {
 
 		return true;
 	}
-	
+
 	public boolean validEmail(String email) throws Exception {
-		return true;
+		Exception invalidEmail = new Exception("Invalid email!");
+		EmailValidator validator = EmailValidator.getInstance();
+		if(validator.isValid(email))
+			return true;
+		else
+			throw invalidEmail;
 	}
-	
+
 
 	public String getUsername() {
 		return null;
