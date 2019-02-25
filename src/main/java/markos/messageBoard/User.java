@@ -76,7 +76,7 @@ public class User {
 	}
 
 	public String getEmail() {
-		return null;
+		return this.email;
 	}
 
 	public int getStars() {
