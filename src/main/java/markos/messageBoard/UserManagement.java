@@ -1,5 +1,8 @@
 package markos.messageBoard;
 
+import java.util.List;
+import java.util.Scanner;
+
 import services.UserInfo;
 
 public class UserManagement {
@@ -17,11 +20,49 @@ public class UserManagement {
 		
 	}
 
-	public void filterUsersAndDisplay(UserInfo userInfo) {
+	public void filterUsersAndDisplay(UserInfo userInfo) throws Exception {
 
+		Scanner userOk = new Scanner(System.in);
+		List<User> allUsers = userInfo.listUsers();
+		System.out.println("\nAll current users with more than one star.\n");
+    	System.out.println("\n--------------------------------------------------------------------");
+    	System.out.println("\n--------------------------------------------------------------------\n");
+    	boolean noUserWithStars = true;
+    	filter=0;
+    	
+    	if(allUsers.isEmpty()) {
+    		System.out.println("\nThere is no registered user.\n");
+    		Thread.sleep(3000);
+    	}
+    		
+		for (User user:allUsers) {
+			if(user.getStars() > 0 ) {
+				filter++;
+				noUserWithStars = false;
+				System.out.println("Username: " + user.getUsername() + "\n");
+		        System.out.println("Name : " + user.getName() + "\n");
+		        System.out.println("Number of stars : " + user.getStars() + "\n");
+		        System.out.println("\n--------------------------------------------------------------------\n");
+			}
+		}
+		
+		if(noUserWithStars) {
+			System.out.println("\nThere is no user with more than 1 star.\n");
+			Thread.sleep(3000);
+		}
+			
+		
+//		System.out.println("\nPlease enter 'ok' to return.\n");
+//		while(true) {
+//			String userReturn = userOk.nextLine();
+//			if(userReturn.toLowerCase().equals("ok"))
+//				return;
+//			else
+//				System.out.println("\nPlease enter the suggested command.\n");
+//		}
 	}
 	
 	public int getFilter() {
-		return (Integer) null;
+		return this.filter;
 	}
 }
