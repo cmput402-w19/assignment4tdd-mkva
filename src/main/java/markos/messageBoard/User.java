@@ -72,7 +72,7 @@ public class User {
 	}
 
 	public String getName() {
-		return null;
+		return this.name;
 	}
 
 	public String getEmail() {
