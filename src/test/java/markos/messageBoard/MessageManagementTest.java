@@ -43,17 +43,6 @@ public class MessageManagementTest {
 		verify(messMock, times(1)).listAllMessages();
 	}
 	
-    
-//	@Test
-//	public void testviewMessagesRet() throws Exception {
-//
-//	    String data = "ret";
-//	    System.setIn(new ByteArrayInputStream(data.getBytes()));
-//	    MessageManagement messManag = new MessageManagement();
-//		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
-//		System.setIn(System.in);
-//	}
-	
 	@Test
 	public void testNewMessage() throws Exception {
 

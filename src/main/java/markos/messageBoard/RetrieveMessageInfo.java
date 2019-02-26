@@ -16,13 +16,8 @@ public List<Message> listAllMessages() throws Exception {
 		
 		// retrieve data from the database
 		ResultSet allMessages = db.getListMessages();
-		//Message messageReturn;
 		
         while (allMessages.next()) {
-            // It is possible to get the columns via name
-            // also possible to get the columns via the column number
-            // which starts at 1
-            // e.g. resultSet.getSTring(2);
         	       	
         	int id = allMessages.getInt("id");
         	int type = allMessages.getInt("type");
@@ -31,7 +26,6 @@ public List<Message> listAllMessages() throws Exception {
         	String author = allMessages.getString("author");
         	String date = allMessages.getString("date");
         	
-        	//messageReturn = new Message(type, id, parent, content, author, date);
         	listAllMessages.add(new Message(type, id, parent, content, author, date));      	
         }
         
