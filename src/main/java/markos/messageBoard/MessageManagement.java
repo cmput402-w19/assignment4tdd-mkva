@@ -30,7 +30,9 @@ public class MessageManagement {
 			String userOption = option.nextLine();
 			if(userOption.equals("ret"))
 				return;
-			
+			if(userOption.equals("new")) {
+	    		postNewMessage(currentUser);
+	    	}
 			else if(userOption.split(" ")[0].equals("ans") && StringUtils.isNumeric(userOption.split(" ")[1])) {
 				int parent = Integer.parseInt(userOption.split(" ")[1]);
 				postNewMessageAnswer(currentUser, parent);
@@ -44,8 +46,9 @@ public class MessageManagement {
 
 	}
 
-	private void postNewMessage(User currentUser) {
+	public void postNewMessage(User currentUser) {
 
+		
 	}
 
 	public void displayAllMessages(RetrieveMessageInfo mInfo) {
