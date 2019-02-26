@@ -1,0 +1,6 @@
+markos\messageBoard\MessageManagementTest.class
+markos\messageBoard\UserManagementTest.class
+db\DAOAccessTest.class
+markos\messageBoard\MessageTest.class
+markos\messageBoard\ApplicationTest.class
+markos\messageBoard\UserTest.class

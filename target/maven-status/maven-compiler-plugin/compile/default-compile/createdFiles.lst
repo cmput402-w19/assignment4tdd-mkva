@@ -1,0 +1,10 @@
+markos\messageBoard\RetrieveMessageInfo.class
+markos\messageBoard\User.class
+db\DAOAccess.class
+markos\messageBoard\RetrieveUserInfo.class
+markos\messageBoard\Message.class
+markos\messageBoard\UserManagement.class
+services\MessageInfo.class
+services\UserInfo.class
+markos\messageBoard\Application.class
+markos\messageBoard\MessageManagement.class
