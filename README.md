@@ -28,5 +28,3 @@ cd target/
 ```
 java -jar messageBoard-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
-
-Note that to run this project, a MySQL database is necessary. The sql script to create the database is:
