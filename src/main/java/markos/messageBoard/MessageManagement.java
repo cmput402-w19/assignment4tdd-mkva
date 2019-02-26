@@ -29,7 +29,6 @@ public class MessageManagement {
 	}
 
 	public void filterMessagesAndDisplay(MessageInfo messageInfo) throws Exception {
-		Scanner userOk = new Scanner(System.in);
 		List<Message> allMessages = messageInfo.listAllMessages();
 		
 		System.out.println("\nAll current messages that are answers to other messages.\n");
