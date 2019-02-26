@@ -48,7 +48,9 @@ public class MessageManagement {
 
 	public void postNewMessage(User currentUser) {
 
-		
+		System.out.println("\nPlease enter below your message without pressing enter:\n\n");
+		String content = option.nextLine();
+		db.registerNewMessage(currentUser, content);
 	}
 
 	public void displayAllMessages(RetrieveMessageInfo mInfo) {
