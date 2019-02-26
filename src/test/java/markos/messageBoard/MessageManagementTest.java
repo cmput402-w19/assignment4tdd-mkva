@@ -54,5 +54,15 @@ public class MessageManagementTest {
 		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
 		System.setIn(System.in);
 	}
+	
+	@Test
+	public void testviewMessagesNew() throws Exception {
+
+	    String data = "new";
+	    System.setIn(new ByteArrayInputStream(data.getBytes()));
+	    MessageManagement messManag = new MessageManagement();
+		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
+		System.setIn(System.in);
+	}
 
 }
