@@ -33,12 +33,6 @@ public class DAOAccessTest {
 		DAOAccess db = new DAOAccess();
 		db.getAllMessages();
 	}
-
-	@Test
-	public void testGetULogin() throws Exception {
-		DAOAccess db = new DAOAccess();
-		assertEquals(db.getUserLogin("markosva", "markos8866").getClass(), markos.messageBoard.User.class);
-	}
 	
 	@Test
 	public void testNewMessage() throws Exception {
