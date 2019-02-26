@@ -1,5 +1,6 @@
 package markos.messageBoard;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class MessageManagement {
 
 			// Give user options to post message or answer message
 			System.out.println("\n\nPlease enter 'new' if you want to post a new message, "
-					+ "'ans' followed by id (like [ans 2], if you want to answer any message, "
+					+ "'ans' followed by id (like [ans 2]), if you want to answer any message, "
 					+ "or 'ret' to return to the main screen.\n");
 
 			String userOption = option.nextLine();
@@ -42,14 +43,14 @@ public class MessageManagement {
 		}	
 	}
 
-	public void postNewMessageAnswer(User currentUser, int parent)  {
+	public void postNewMessageAnswer(User currentUser, int parent) throws ClassNotFoundException, SQLException  {
 
 		System.out.println("\nPlease enter below your message without pressing enter:\n\n");
 		String content = option.nextLine();
 		db.registerNewMessageAnswer(currentUser, content, parent);
 	}
 
-	public void postNewMessage(User currentUser) {
+	public void postNewMessage(User currentUser) throws ClassNotFoundException, SQLException {
 
 		System.out.println("\nPlease enter below your message without pressing enter:\n\n");
 		String content = option.nextLine();

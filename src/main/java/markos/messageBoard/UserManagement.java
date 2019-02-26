@@ -12,9 +12,18 @@ public class UserManagement {
 	private int filter;
 
 	public User userLogin() throws Exception {
-		User user = new User("usernamefoo", "nameX", "usernamefoo@email.com");
-		return user;
-
+		Scanner userInfo = new Scanner(System.in);
+    	String usernameInput;
+    	String passwordInput;
+    	
+		System.out.println("\n Please provide your information below:\n");
+		System.out.println("\nUsername: ");
+		usernameInput = userInfo.nextLine();
+		System.out.println("\nPassword: ");
+		passwordInput = userInfo.nextLine();
+		
+		// Check on the database and create user with info retrieved from db
+		return db.getUserLogin(usernameInput,passwordInput);
 	}
 
 	public User userRegister() throws Exception {
