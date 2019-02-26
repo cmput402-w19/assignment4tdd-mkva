@@ -84,9 +84,9 @@ public class DAOAccess {
 		try {
 			initialize();
             // This will load the MySQL driver, each DB has its own driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Class.forName("com.mysql.cj.jdbc.Driver");
             // Setup the connection with the DB
-            connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "markosalberta");
+            //connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "markosalberta");
 
             preparedStatement = connect
                     .prepareStatement("select * from user where username=? and password=?");
