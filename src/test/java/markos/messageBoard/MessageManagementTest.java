@@ -64,6 +64,15 @@ public class MessageManagementTest {
 		System.setIn(System.in);
 	}
 	
+	@Test
+	public void testNewMessageAnswer() throws Exception {
+
+		String data = "This is content answer";
+	    System.setIn(new ByteArrayInputStream(data.getBytes()));
+	    MessageManagement messManag = new MessageManagement();
+		messManag.postNewMessageAnswer(new User("markosva", "markos", "markos@email.com"), 2);
+		System.setIn(System.in);
+	}
 	
 
 }

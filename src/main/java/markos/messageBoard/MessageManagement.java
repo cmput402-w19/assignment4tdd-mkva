@@ -42,8 +42,11 @@ public class MessageManagement {
 		}	
 	}
 
-	private void postNewMessageAnswer(User currentUser, int parent)  {
+	public void postNewMessageAnswer(User currentUser, int parent)  {
 
+		System.out.println("\nPlease enter below your message without pressing enter:\n\n");
+		String content = option.nextLine();
+		db.registerNewMessageAnswer(currentUser, content, parent);
 	}
 
 	public void postNewMessage(User currentUser) {
