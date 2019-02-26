@@ -7,11 +7,15 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.PrintStream;
+import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import services.MessageInfo;
@@ -39,22 +43,16 @@ public class MessageManagementTest {
 		verify(messMock, times(1)).listAllMessages();
 	}
 	
+
+    
 	@Test
-	public void testviewMessages() throws Exception {
-		MessageManagement messManag = new MessageManagement();
+	public void testviewMessagesRet() throws Exception {
+
+	    String data = "ret";
+	    System.setIn(new ByteArrayInputStream(data.getBytes()));
+	    MessageManagement messManag = new MessageManagement();
 		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
-		
-		String data = "ret";
-		InputStream stdin = System.in;
-		try {
-		  System.setIn(new ByteArrayInputStream(data.getBytes()));
-		  Scanner scanner = new Scanner(System.in);
-		  System.out.println(scanner.nextLine());
-		} finally {
-		  System.setIn(stdin);
-		}
-		
-		
+		System.setIn(System.in);
 	}
 
 }
