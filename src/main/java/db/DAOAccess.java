@@ -20,16 +20,13 @@ public class DAOAccess {
 
 	public void initialize() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		// Setup the connection with the DB
 		connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "");
 	}
 
 	public void getAllMessages() throws Exception {
 		try {
 			initialize();
-			// Statements allow to issue SQL queries to the database
 			statement = connect.createStatement();
-			// Result set get the result of the SQL query
 			resultSet = statement
 					.executeQuery("select * from messageBoard.post");
 			writeMessages(resultSet);
@@ -48,10 +45,6 @@ public class DAOAccess {
     	
         while (resultSet.next()) {
         	noMessage = false;
-            // It is possible to get the columns via name
-            // also possible to get the columns via the column number
-            // which starts at 1
-            // e.g. resultSet.getSTring(2);
         	
         	int id = resultSet.getInt("ID");
         	int type = resultSet.getInt("type");
@@ -83,10 +76,6 @@ public class DAOAccess {
 	public User getUserLogin(String usernameInput, String passwordInput) throws Exception  {
 		try {
 			initialize();
-            // This will load the MySQL driver, each DB has its own driver
-            //Class.forName("com.mysql.cj.jdbc.Driver");
-            // Setup the connection with the DB
-            //connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "markosalberta");
 
             preparedStatement = connect
                     .prepareStatement("select * from user where username=? and password=?");
@@ -117,7 +106,6 @@ public class DAOAccess {
         preparedStatement.setString(4, emailInput);
 		preparedStatement.executeUpdate();
 		
-		//return getUserLogin(usernameInput, passwordInput);
 		return new User(usernameInput, nameInput, emailInput);
 
 	}
@@ -187,9 +175,7 @@ public class DAOAccess {
 	public ResultSet getListUsers() throws Exception {
 		try {
     		initialize();
-            // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
-            // Result set get the result of the SQL query
             resultSet = statement
                     .executeQuery("select * from messageBoard.user");
 
@@ -203,9 +189,7 @@ public class DAOAccess {
 	public ResultSet getListMessages() throws Exception {
 		try {
     		initialize();
-            // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
-            // Result set get the result of the SQL query
             resultSet = statement
                     .executeQuery("select * from messageBoard.post");
 

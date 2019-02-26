@@ -19,6 +19,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import db.DAOAccess;
+import markos.messageBoard.User;
 
 public class DAOAccessTest {
 
@@ -28,32 +29,23 @@ public class DAOAccessTest {
 	private ResultSet resultSet = null;
 
 	@Test
-	public void test() {
-		
+	public void testAllMessages() throws Exception {
+		DAOAccess db = new DAOAccess();
+		db.getAllMessages();
 	}
-//	@Test
-//	public void testGetAllMessagesWorking() throws Exception {
-//		try {
-//			DAOAccess db = new DAOAccess();
-//			connect = db.getAllMessages();	
-//			//check if connect is filled
-//			assertTrue(connect!=null);
-//
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-//	@Rule
-//	public ExpectedException thrown= ExpectedException.none();
 
-//	// check if no exception is thrown
-//	@Test
-//	public void throwsNothing() throws Exception {
-//		DAOAccess db = new DAOAccess();
-//		DAOAccess dbMock = mock(DAOAccess.class);
-//		//when(dbMock.getAllMessages()).thenReturn(void.class);
-//		connect = db.getAllMessages();
-//	}
-
+	@Test
+	public void testGetULogin() throws Exception {
+		DAOAccess db = new DAOAccess();
+		assertEquals(db.getUserLogin("markosva", "markos8866").getClass(), markos.messageBoard.User.class);
+	}
+	
+	@Test
+	public void testNewMessage() throws Exception {
+		DAOAccess db = new DAOAccess();
+		User u1 = new User("markosva", "markos", "markos@email.com");
+		db.registerNewMessage(u1, "this is a content");
+	}
+	
+	
 }
