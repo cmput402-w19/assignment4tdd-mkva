@@ -4,7 +4,7 @@ service:
   - mysql
 
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS messageBoard;'  
+  - mysql -u root -e 'CREATE DATABASE IF NOT EXISTS messageBoard;'  
   - mysql -u root --default-character-set=utf8 messageBoard < db/db.sql
 
 script:

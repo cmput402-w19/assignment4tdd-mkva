@@ -64,14 +64,14 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameSpecialCharacters" time="0"/>
-  <testcase classname="markos.messageBoard.UserTest" name="testGetName" time="0"/>
-  <testcase classname="markos.messageBoard.UserTest" name="testGetStars" time="0"/>
-  <testcase classname="markos.messageBoard.UserTest" name="testGetEmail" time="0"/>
-  <testcase classname="markos.messageBoard.UserTest" name="testGetUsername" time="0"/>
-  <testcase classname="markos.messageBoard.UserTest" name="testValidEmail" time="0"/>
-  <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameWhiteSpace" time="0"/>
   <testcase classname="markos.messageBoard.UserTest" name="testValidUsername" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameWhiteSpace" time="0"/>
   <testcase classname="markos.messageBoard.UserTest" name="testValidEmailWrong" time="0"/>
   <testcase classname="markos.messageBoard.UserTest" name="testValidUsernameSizeZero" time="0"/>
   <testcase classname="markos.messageBoard.UserTest" name="testGetStarsInitial" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetName" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetEmail" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetUsername" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testValidEmail" time="0"/>
+  <testcase classname="markos.messageBoard.UserTest" name="testGetStars" time="0"/>
 </testsuite>
