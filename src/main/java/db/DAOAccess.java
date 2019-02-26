@@ -22,7 +22,7 @@ public class DAOAccess {
 		connect = DriverManager.getConnection("jdbc:mysql://localhost/messageBoard", "root", "markosalberta");
 	}
 
-	public Connection getAllMessages() throws Exception {
+	public void getAllMessages() throws Exception {
 		try {
 			initialize();
 			// Statements allow to issue SQL queries to the database
@@ -35,7 +35,6 @@ public class DAOAccess {
 		} catch (Exception e) {
 			throw e;
 		} 
-		return connect;
 	}
 
 	private void writeMessages(ResultSet resultSet) {

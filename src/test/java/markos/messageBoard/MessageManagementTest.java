@@ -44,15 +44,15 @@ public class MessageManagementTest {
 	}
 	
     
-	@Test
-	public void testviewMessagesRet() throws Exception {
-
-	    String data = "ret";
-	    System.setIn(new ByteArrayInputStream(data.getBytes()));
-	    MessageManagement messManag = new MessageManagement();
-		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
-		System.setIn(System.in);
-	}
+//	@Test
+//	public void testviewMessagesRet() throws Exception {
+//
+//	    String data = "ret";
+//	    System.setIn(new ByteArrayInputStream(data.getBytes()));
+//	    MessageManagement messManag = new MessageManagement();
+//		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
+//		System.setIn(System.in);
+//	}
 	
 	@Test
 	public void testNewMessage() throws Exception {
@@ -73,6 +73,5 @@ public class MessageManagementTest {
 		messManag.postNewMessageAnswer(new User("markosva", "markos", "markos@email.com"), 2);
 		System.setIn(System.in);
 	}
-	
 
 }
