@@ -6,8 +6,11 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.junit.Test;
 
@@ -34,6 +37,24 @@ public class MessageManagementTest {
 
 		assert(1 == messManag.getFilter());
 		verify(messMock, times(1)).listAllMessages();
+	}
+	
+	@Test
+	public void testviewMessages() throws Exception {
+		MessageManagement messManag = new MessageManagement();
+		messManag.viewMessages(new User("markosva", "markos", "markos@email.com"));
+		
+		String data = "ret";
+		InputStream stdin = System.in;
+		try {
+		  System.setIn(new ByteArrayInputStream(data.getBytes()));
+		  Scanner scanner = new Scanner(System.in);
+		  System.out.println(scanner.nextLine());
+		} finally {
+		  System.setIn(stdin);
+		}
+		
+		
 	}
 
 }
