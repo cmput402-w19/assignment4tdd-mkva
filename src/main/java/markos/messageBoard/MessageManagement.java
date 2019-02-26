@@ -14,7 +14,7 @@ public class MessageManagement {
 	Scanner option = new Scanner(System.in);
 	private int filter;
 
-	public void viewMessages(User currentUser)  {
+	public void viewMessages(User currentUser) throws Exception  {
 
 		// View all messages
 		RetrieveMessageInfo mInfo = new RetrieveMessageInfo();
@@ -56,8 +56,9 @@ public class MessageManagement {
 		db.registerNewMessage(currentUser, content);
 	}
 
-	public void displayAllMessages(RetrieveMessageInfo mInfo) {
+	public void displayAllMessages(RetrieveMessageInfo mInfo) throws Exception {
 
+		db.getAllMessages();
 	}
 
 	public void filterMessagesAndDisplay(MessageInfo messageInfo) throws Exception {
